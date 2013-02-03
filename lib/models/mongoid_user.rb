@@ -12,8 +12,8 @@ class MongoidUser
   # Validations
   validates_uniqueness_of :email
   validates_format_of :email, :with => /(\A(\s*)\Z)|(\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z)/i
-  validates_presence_of :password
-  validates_confirmation_of :password
+  validates_presence_of :password, :on => :create
+  validates_confirmation_of :password, :on => :create
 
   #attr_protected :_id, :salt
 
